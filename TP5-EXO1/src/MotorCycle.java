@@ -5,10 +5,12 @@ public class MotorCycle extends Vehicle {
 	private boolean hastractionControl;
 	
 	
-	public MotorCycle(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmissionType, Engine engine,int seatHeight, boolean hastractionControl) {
-	     super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, engine);
+	public MotorCycle(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmissionType,int seatHeight,
+			boolean hastractionControl, int nbOfWhhels, int horsePower, double engineCapacity) {
+	     super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, nbOfWhhels,horsePower,engineCapacity);
 		this.seatHeight = seatHeight;
 		this.hastractionControl = hastractionControl;
+		this.engine = new Engine(120, 1.0);
 	}
 
 

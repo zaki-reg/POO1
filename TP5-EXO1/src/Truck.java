@@ -5,10 +5,12 @@ public class Truck extends Vehicle {
 	private boolean trailerSupport;
 	
 	
-	public Truck(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmissionType, Engine engine,int truckCapacity, boolean trailerSupport) {
-	    super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, engine);
+	public Truck(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmissionType,int truckCapacity,
+			boolean trailerSupport, int nbOfWheels, int horsePower, double engineCapacity) {
+	    super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, nbOfWheels, horsePower, engineCapacity);
 		this.truckCapacity = truckCapacity;
 		this.trailerSupport = trailerSupport;
+		this.engine = new Engine(360, 3.5);
 	}
 
 

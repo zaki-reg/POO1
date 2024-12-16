@@ -6,16 +6,18 @@ public class Vehicle {
 	private String fuelType;
 	private String plaqueNumber;
 	private boolean transmitionType;
-	private Engine engine;
+	protected Engine engine;
+	private int nbOfWheeles;
 	
 	
-	public Vehicle(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmitionType, Engine engine) {
+	public Vehicle(String maker, int topSpeed, String fuelType, String plaqueNumber, boolean transmitionType, int nbOfWheels, int horsePower, double engineCapacity) {
 		this.maker = maker;
 		this.topSpeed = topSpeed;
 		this.fuelType = fuelType;
 		this.plaqueNumber = plaqueNumber;
 		this.transmitionType = transmitionType;
-		this.engine = engine;
+		this.engine = new Engine(horsePower, engineCapacity);
+		this.setNbOfWheeles(nbOfWheels);
 	}
 
 
@@ -73,6 +75,16 @@ public class Vehicle {
                            ", Plaque Number: " + plaqueNumber + ", Transmission Type: " + (transmitionType ? "Automatic" : "Manual"));
         engine.displayInfo();
     }
+
+
+	public int getNbOfWheeles() {
+		return nbOfWheeles;
+	}
+
+
+	public void setNbOfWheeles(int nbOfWheeles) {
+		this.nbOfWheeles = nbOfWheeles;
+	}
 	
 	
 

@@ -10,7 +10,7 @@ public class Truck extends Vehicle {
 	    super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, nbOfWheels, horsePower, engineCapacity);
 		this.truckCapacity = truckCapacity;
 		this.trailerSupport = trailerSupport;
-		this.engine = new Engine(360, 3.5);
+		this.engine = new Engine(horsePower, engineCapacity);
 	}
 
 

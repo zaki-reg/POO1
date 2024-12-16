@@ -10,7 +10,7 @@ public class MotorCycle extends Vehicle {
 	     super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, nbOfWhhels,horsePower,engineCapacity);
 		this.seatHeight = seatHeight;
 		this.hastractionControl = hastractionControl;
-		this.engine = new Engine(120, 1.0);
+		this.engine = new Engine(horsePower, engineCapacity);
 	}
 
 

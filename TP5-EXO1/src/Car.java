@@ -9,7 +9,7 @@ public class Car extends Vehicle {
      super(maker, topSpeed, fuelType, plaqueNumber, transmissionType, nbOfWheels, horsePower, engineCapacity);
      this.nbOfDoors = number0fDoors;
      this.hasSenesors = hasParkingSensors;
-     this.engine = new Engine(220, 1.5);
+     this.engine = new Engine(horsePower, engineCapacity);
  }
 
 

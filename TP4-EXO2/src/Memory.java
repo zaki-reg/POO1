@@ -2,15 +2,12 @@ import java.util.ArrayList;
 
 public class Memory {
 	
-    private static int capacity;
-    private ArrayList<Process> loadedProcesses;
+    private static int capacity=2048;
+    static  ArrayList<Process> loadedProcesses;
 
-    public Memory(int ram) {
-        Memory.capacity = ram;
-        this.loadedProcesses = new ArrayList<>();
-    }
+    
 
-    public void loadProcess(Process p) {
+    public static void loadProcess(Process p) {
         if (!p.isLoaded()) {
             if (p.getMemoryRequired() <= capacity) {
                 loadedProcesses.add(p);
@@ -26,7 +23,7 @@ public class Memory {
         displayMemoryStatus();
     }
 
-    public void freeProcess(Process p) {
+    public static void freeProcess(Process p) {
         if (p.isLoaded()) {
             loadedProcesses.remove(p);
             capacity += p.getMemoryRequired();
@@ -38,11 +35,11 @@ public class Memory {
         displayMemoryStatus();
     }
 
-    public void displayMemoryStatus() {
+    public static void displayMemoryStatus() {
         System.out.println("Available Capacity: " + capacity + " MB");
         System.out.println("Processes loaded: " + loadedProcesses.size());
         for (Process p : loadedProcesses) {
-            System.out.println(" - Process " + p.getId() + " (Loaded: " + p.isLoaded() + ")");
+            System.out.println(" - Process " + p.getId() + " (Loaded: " + (p.isLoaded()? "Yes" : "No") + ")");
         }
         System.out.println("====================================");
     }

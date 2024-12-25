@@ -1,4 +1,4 @@
-
+package memorymanagement;
 
 import java.util.Scanner;
 
